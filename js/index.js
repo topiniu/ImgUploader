@@ -10,21 +10,38 @@ $(function(){
             return;
         }
 
+        var form = $("#fileUploadForm")[0];
 
-        // $.ajax({
-        //     method: "POST",
-        //     url: "http://localhost:8080/Project_BackSky_N/uploadimg",
-        //     data: {"file":file},
-        //     content: "multipart/form-data"
-        // }).done(function(msg){
-        //     alert(msg);
-        // })
+        var data = new FormData(form);
+        // alert(data);
+
+        $.ajax({
+            type: "POST",
+            enctype: 'multipart/form-data',
+            url: "http://localhost:8080/Project_BackSky_New/uploadimg",
+            data: data,
+            processData: false,
+            contentType: false,
+            cache: false,
+            timeout: 600000,
+            success: function(data){
+                // alert(data);
+            },
+            error: function(e){
+                alert("Something wrong");
+            }
+        });
     })
 })
 
 function v(name)
 {
-    if(name.match("png") || name.match("jpg")){
+    if(name.match("png") ||
+        name.match("jpg") ||
+        name.match("JPG") ||
+        name.match("PNG") ||
+        name.match("jpeg") ||
+        name.match("JPEG")){
         return true;
     }
 

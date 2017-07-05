@@ -1,0 +1,113 @@
+.beCenterX{
+  left:50%;
+  transform: translate(-50%,0);
+}
+.beCenterY{
+  top:50%;
+  transform: translate(0,-50%);
+}
+.beCenter{
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+.formPanel{
+  position: relative;
+  width:80%;
+  //height:400px;
+
+  .checkBox{
+    position: relative;
+    width:90%;
+    //height:400px;
+
+    .beCenterX;
+  }
+}
+
+.resultContainer{
+
+.resultPanel {
+  display: none;
+  position: relative;
+  height: auto;
+  //display:inline-block;
+  margin:10px;
+  border: 1px solid orangered;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+
+  .beCenterX;
+  div {
+    margin: 0px 10px;
+    .pathText {
+      font-size: 12px;
+      display: inline-block;
+      background-color: #7DB9DE;
+      border: 1px solid #7DB9DE;
+      margin-left:5px;
+      padding: 0 5px;
+      height: 30px;
+      line-height: 30px;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all .5s;
+
+      &:hover{
+        background-color: white;
+        color: #7DB9DE;
+      }
+    }
+  }
+}
+}
+
+.loadingCover{
+  display: none;
+  
+  position: absolute;
+  left:0;
+  top:0;
+  z-index: 9;
+
+  //display: block;
+  width:100%;
+  height:100%;
+  background-color: rgba(145,152,159,0.6);
+
+  .load{
+    position: absolute;
+    display: inline;
+    .beCenter;
+    .letter {
+      animation-name: loadingF;
+      animation-duration: 1.6s;
+      animation-iteration-count: infinite;
+      animation-direction: linear;
+      display: inline;
+      color: white;
+      font-size: 25px;
+    }
+
+    .l-1 {animation-delay: .48s;}
+    .l-2 {animation-delay: .6s;}
+    .l-3 {animation-delay: .72s;}
+    .l-4 {animation-delay: .84s;}
+    .l-5 {animation-delay: .96s;}
+    .l-6 {animation-delay: 1.08s;}
+    .l-7 {animation-delay: 1.2s;}
+    .l-8 {animation-delay: 1.32s;}
+    .l-9 {animation-delay: 1.44s;}
+    .l-10 {animation-delay: 1.56s;}
+  }
+
+}
+
+@keyframes loadingF {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+

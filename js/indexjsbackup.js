@@ -11,7 +11,6 @@ $(function(){
             return;
         }
 
-
         var form = $("#fileUploadForm")[0];
 
         var data = new FormData(form);
@@ -20,12 +19,21 @@ $(function(){
         $.ajax({
             type: "POST",
             enctype: 'multipart/form-data',
-            url: "http://23.106.158.25:8080/Project_BackSky_New/uploadimg",
+            url: "http://localhost:8080/Project_BackSky_New/uploadimg",
             data: data,
             processData: false,
             contentType: false,
             cache: false,
             timeout: 600000,
+            xhr: function(){
+                var xhr = $.ajaxSettings.xhr();
+                xhr.withCredentials = true;
+                if(onprogress && xhr.upload){
+                    xhr.upload.addEventListener("progress",onprogress,false);
+
+                    return xhr;
+                }
+            },
             success: function(data){
                 loadData(JSON.parse(data));
                 saveData(JSON.parse(data));
@@ -53,7 +61,12 @@ $(function(){
 
     init();
 });
-
+function onprogress(evt){
+    var loaded = evt.loaded;
+    var tot = evt.total;
+    var per = Math.floor(100*loaded/tot);
+    console.log(per + "%");
+}
 function loadData(data){
     // $(".j_fullPath").text(data._fullPath);
     // $(".j_compressedPath").text(data._compressedPath);
@@ -95,8 +108,4 @@ function v(name)
     }
 
     return false;
-}
-
-function loading(){
-
 }

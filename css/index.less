@@ -14,13 +14,38 @@
 
 .formPanel{
   position: relative;
-  width:80%;
+  width:100%;
   //height:400px;
+  .inputBox{
+    position: relative;
+    background-color: rgb(145,152,159);
+    z-index: 1;
+    width:100%;
+    min-width:220px;
+    height:220px;
+    //opacity:0;
+    p{
+      display: inline;
+      position: absolute;
+      margin: 0;
+
+      .beCenter;
+      color: white;
+      font-size: 20px;
+      font-weight: 100;
+    }
+  }
 
   .checkBox{
-    position: relative;
-    width:90%;
-    //height:400px;
+    position: absolute;
+    z-index: 2;
+    top:0;
+    width:100%;
+    min-width:200px;
+    height:220px;
+    opacity:0;
+    background-color: #F6C555;
+    cursor: pointer;
 
     .beCenterX;
   }
@@ -33,7 +58,7 @@
   position: relative;
   height: auto;
   //display:inline-block;
-  margin:10px;
+  margin:10px 0;
   border: 1px solid orangered;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -67,6 +92,7 @@
 
 .loadingCover{
   display: none;
+  transition: all 2s;
   
   position: absolute;
   left:0;
@@ -76,7 +102,7 @@
   //display: block;
   width:100%;
   height:100%;
-  background-color: rgba(145,152,159,0.6);
+  background-color: rgb(145,152,159);
 
   .load{
     position: absolute;
@@ -86,10 +112,11 @@
       animation-name: loadingF;
       animation-duration: 1.6s;
       animation-iteration-count: infinite;
-      animation-direction: linear;
       display: inline;
       color: white;
       font-size: 25px;
+      font-weight:100;
+
     }
 
     .l-1 {animation-delay: .48s;}

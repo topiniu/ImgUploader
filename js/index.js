@@ -11,6 +11,7 @@ $(function(){
             return;
         }
 
+        $(".j_loadingCover").css("display","block");
 
         var form = $("#fileUploadForm")[0];
 
@@ -20,7 +21,7 @@ $(function(){
         $.ajax({
             type: "POST",
             enctype: 'multipart/form-data',
-            url: "http://23.106.158.25:8080/Project_BackSky_New/uploadimg",
+            url: "http://localhost:8080/Project_BackSky_New/uploadimg",
             data: data,
             processData: false,
             contentType: false,
@@ -30,6 +31,7 @@ $(function(){
                 loadData(JSON.parse(data));
                 saveData(JSON.parse(data));
 
+                $(".j_loadingCover").css("display","none");
             },
             error: function(e){
                 alert("Something wrong");
@@ -49,7 +51,9 @@ $(function(){
     });
 
     // new Clipboard('.btn');
-
+    $("#j_checkBox").on("mouseEnter",function(){
+        $(".j_inputBox").css("")
+    })
 
     init();
 });

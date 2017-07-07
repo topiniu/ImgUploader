@@ -22,6 +22,7 @@
   width: 100%;
   min-width: 220px;
   height: 220px;
+  transition: all .5s;
 }
 .formPanel .inputBox p {
   display: inline;
@@ -82,7 +83,7 @@
 }
 .loadingCover {
   display: none;
-  transition: all 2s;
+  transition: all 1s;
   position: absolute;
   left: 0;
   top: 0;

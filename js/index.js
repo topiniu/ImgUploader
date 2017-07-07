@@ -11,7 +11,7 @@ $(function(){
             return;
         }
 
-        $(".j_loadingCover").css("display","block");
+        $(".j_loadingCover").fadeIn("slow");
 
         var form = $("#fileUploadForm")[0];
 
@@ -31,10 +31,10 @@ $(function(){
                 loadData(JSON.parse(data));
                 saveData(JSON.parse(data));
 
-                $(".j_loadingCover").css("display","none");
+                $(".j_loadingCover").fadeOut("slow");
             },
             error: function(e){
-                alert("Something wrong");
+                // alert("Something wrong");
             }
         });
     });
@@ -51,9 +51,14 @@ $(function(){
     });
 
     // new Clipboard('.btn');
-    $("#j_checkBox").on("mouseEnter",function(){
-        $(".j_inputBox").css("")
-    })
+    $("#j_checkBox").on("mouseenter",function(){
+        $(".j_inputBox").css("backgroundColor","#BDC0BA")
+        // alert(0);
+    });
+    $("#j_checkBox").on("mouseleave",function(){
+        $(".j_inputBox").css("backgroundColor","rgb(145,152,159)")
+        // alert(0);
+    });
 
     init();
 });

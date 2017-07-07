@@ -34,7 +34,7 @@ $(function(){
                 $(".j_loadingCover").fadeOut("slow");
             },
             error: function(e){
-                // alert("Something wrong");
+                alert("Something wrong");
             }
         });
     });

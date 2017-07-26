@@ -72,8 +72,8 @@ function getData() {
 
     $.ajax({
         type: "POST",
-        // url: "http://23.106.158.25:8080/Project_BackSky_New/uploadimg",
-        url: "http://localhost:8080/Project_BackSky_New/getImgList",
+        url: "http://23.106.158.25:8080/Project_BackSky_New/getImgList",
+        // url: "http://localhost:8080/Project_BackSky_New/getImgList",
         success: function (data) {
             data = JSON.parse(data);
             for (item in data) {

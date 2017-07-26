@@ -3,7 +3,6 @@
  */
 var localData = [];
 $(function () {
-    getData();
     $("#j_checkBox").change(function () {
         var file = $("#j_checkBox").val();
         if (!v(file)) {
@@ -65,8 +64,7 @@ $(function () {
         $(".j_inputBox").css("backgroundColor", "rgb(145,152,159)")
         // alert(0);
     });
-
-    init();
+    getData();
 });
 function getData() {
 
@@ -110,15 +108,6 @@ function saveData(data) {
     window.localStorage.clear();
     window.localStorage.setItem("data", JSON.stringify(localData));
 }
-
-function init() {
-    localData = JSON.parse(window.localStorage.getItem("data"));
-
-    for (var index in localData) {
-        loadData(localData[index]);
-    }
-}
-
 function v(name) {
     if (name.match("png") ||
         name.match("jpg") ||

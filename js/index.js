@@ -75,6 +75,9 @@ function getData() {
         url: "http://23.106.158.25:8080/Project_BackSky_New/getImgList",
         // url: "http://localhost:8080/Project_BackSky_New/getImgList",
         success: function (data) {
+            if (data === "") {
+                return;
+            }
             data = JSON.parse(data);
             for (item in data) {
 

@@ -138,6 +138,26 @@
 .loadingCover .load .l-10 {
   animation-delay: 1.56s;
 }
+.msg-box {
+  display: none;
+  width: 240px;
+  height: 80px;
+  position: absolute;
+  background-color: #91989f;
+  color: white;
+  border-radius: 10px;
+  left: 50%;
+  bottom: 100px;
+  transform: translate(-50%, 0);
+}
+.msg-box .msg-box-content {
+  display: inline-block;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 @keyframes loadingF {
   0% {
     opacity: 0;

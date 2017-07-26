@@ -1,143 +1,172 @@
-.beCenterX{
-  left:50%;
-  transform: translate(-50%,0);
-}
-.beCenterY{
-  top:50%;
-  transform: translate(0,-50%);
-}
-.beCenter{
-  top:50%;
-  left:50%;
-  transform: translate(-50%,-50%);
+.beCenterX {
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
-.formPanel{
-  position: relative;
-  width:100%;
-  //height:400px;
-  .inputBox{
+.beCenterY {
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.beCenter {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.formPanel {
     position: relative;
-    background-color: rgb(145,152,159);
-    z-index: 1;
-    width:100%;
-    min-width:220px;
-    height:220px;
-    transition: all .5s;
-
-    //opacity:0;
-    p{
-      display: inline;
-      position: absolute;
-      margin: 0;
-
-      .beCenter;
-      color: white;
-      font-size: 20px;
-      font-weight: 100;
+    width: 100%; //height:400px;
+    .inputBox {
+        position: relative;
+        background-color: rgb(145, 152, 159);
+        z-index: 1;
+        width: 100%;
+        min-width: 220px;
+        height: 220px;
+        transition: all .5s; //opacity:0;
+        p {
+            display: inline;
+            position: absolute;
+            margin: 0;
+            .beCenter;
+            color: white;
+            font-size: 20px;
+            font-weight: 100;
+        }
     }
-  }
+    .checkBox {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        width: 100%;
+        min-width: 200px;
+        height: 220px;
+        opacity: 0;
+        background-color: #F6C555;
+        cursor: pointer;
+        .beCenterX;
+    }
+}
 
-  .checkBox{
+.resultContainer {
+    .resultPanel {
+        display: none;
+        position: relative;
+        height: auto; //display:inline-block;
+        margin: 10px 0;
+        border: 1px solid orangered;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        .beCenterX;
+        div {
+            margin: 0px 10px;
+            .pathText {
+                font-size: 12px;
+                display: inline-block;
+                background-color: #7DB9DE;
+                border: 1px solid #7DB9DE;
+                margin-left: 5px;
+                padding: 0 5px;
+                height: 30px;
+                line-height: 30px;
+                color: white;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: all .5s;
+                &:hover {
+                    background-color: white;
+                    color: #7DB9DE;
+                }
+            }
+        }
+    }
+}
+
+.loadingCover {
+    display: none;
+    transition: all 1s;
     position: absolute;
-    z-index: 2;
-    top:0;
-    width:100%;
-    min-width:200px;
-    height:220px;
-    opacity:0;
-    background-color: #F6C555;
-    cursor: pointer;
-
-    .beCenterX;
-  }
-}
-
-.resultContainer{
-
-.resultPanel {
-  display: none;
-  position: relative;
-  height: auto;
-  //display:inline-block;
-  margin:10px 0;
-  border: 1px solid orangered;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-
-  .beCenterX;
-  div {
-    margin: 0px 10px;
-    .pathText {
-      font-size: 12px;
-      display: inline-block;
-      background-color: #7DB9DE;
-      border: 1px solid #7DB9DE;
-      margin-left:5px;
-      padding: 0 5px;
-      height: 30px;
-      line-height: 30px;
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: all .5s;
-
-      &:hover{
-        background-color: white;
-        color: #7DB9DE;
-      }
+    left: 0;
+    top: 0;
+    z-index: 9; //display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(145, 152, 159);
+    .load {
+        position: absolute;
+        display: inline;
+        .beCenter;
+        .letter {
+            animation-name: loadingF;
+            animation-duration: 1.6s;
+            animation-iteration-count: infinite;
+            display: inline;
+            color: white;
+            font-size: 25px;
+            font-weight: 100;
+        }
+        .l-1 {
+            animation-delay: .48s;
+        }
+        .l-2 {
+            animation-delay: .6s;
+        }
+        .l-3 {
+            animation-delay: .72s;
+        }
+        .l-4 {
+            animation-delay: .84s;
+        }
+        .l-5 {
+            animation-delay: .96s;
+        }
+        .l-6 {
+            animation-delay: 1.08s;
+        }
+        .l-7 {
+            animation-delay: 1.2s;
+        }
+        .l-8 {
+            animation-delay: 1.32s;
+        }
+        .l-9 {
+            animation-delay: 1.44s;
+        }
+        .l-10 {
+            animation-delay: 1.56s;
+        }
     }
-  }
-}
 }
 
-.loadingCover{
-  display: none;
-  transition: all 1s;
-  
-  position: absolute;
-  left:0;
-  top:0;
-  z-index: 9;
-
-  //display: block;
-  width:100%;
-  height:100%;
-  background-color: rgb(145,152,159);
-
-
-  .load{
+.msg-box {
+    display: none;
+    width: 240px;
+    height: 80px;
     position: absolute;
-    display: inline;
-    .beCenter;
-    .letter {
-      animation-name: loadingF;
-      animation-duration: 1.6s;
-      animation-iteration-count: infinite;
-      display: inline;
-      color: white;
-      font-size: 25px;
-      font-weight:100;
-
+    background-color: rgb(145, 152, 159);
+    color: white;
+    border-radius: 10px;
+    left: 50%;
+    bottom: 100px;
+    transform: translate(-50%, 0);
+    ;
+    .msg-box-content {
+        display: inline-block;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
-
-    .l-1 {animation-delay: .48s;}
-    .l-2 {animation-delay: .6s;}
-    .l-3 {animation-delay: .72s;}
-    .l-4 {animation-delay: .84s;}
-    .l-5 {animation-delay: .96s;}
-    .l-6 {animation-delay: 1.08s;}
-    .l-7 {animation-delay: 1.2s;}
-    .l-8 {animation-delay: 1.32s;}
-    .l-9 {animation-delay: 1.44s;}
-    .l-10 {animation-delay: 1.56s;}
-  }
-
 }
 
 @keyframes loadingF {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
-

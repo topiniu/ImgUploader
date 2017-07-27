@@ -21,8 +21,8 @@ $(function () {
         $.ajax({
             type: "POST",
             enctype: 'multipart/form-data',
-            url: "http://23.106.158.25:8080/Project_BackSky_New/uploadimg",
-            // url: "http://localhost:8080/Project_BackSky_New/uploadimg",
+            // url: "http://23.106.158.25:8080/Project_BackSky_New/uploadimg",
+            url: "http://localhost:8080/Project_BackSky_New/uploadimg",
             data: data,
             processData: false,
             contentType: false,
@@ -70,13 +70,14 @@ function getData() {
 
     $.ajax({
         type: "POST",
-        url: "http://23.106.158.25:8080/Project_BackSky_New/getImgList",
-        // url: "http://localhost:8080/Project_BackSky_New/getImgList",
+        // url: "http://23.106.158.25:8080/Project_BackSky_New/getImgList",
+        url: "http://localhost:8080/Project_BackSky_New/getImgList",
         success: function (data) {
             if (data === "") {
                 return;
             }
             data = JSON.parse(data);
+            console.log(data);
             for (item in data) {
 
                 loadData(data[item]);

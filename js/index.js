@@ -40,18 +40,18 @@ $(function () {
         });
     });
 
-    $(".j_path").on("click", function () {
+    $(".j_funcBtn").on("click", function () {
         // alert($(this));
-        $(this).select()
+        // $(this).select()
         $("#msgBox").fadeIn();
         setTimeout(function () {
             $("#msgBox").fadeOut();
         }, 1500);
     });
 
-    new Clipboard('.btn', {
-        target: function (trigger) {
-            return trigger;
+    new Clipboard('.j_funcBtn', {
+        text: function (trigger) {
+            return trigger.getAttribute('attr-link');
         }
     });
 
@@ -69,7 +69,7 @@ $(function () {
 function getData() {
 
     $.ajax({
-        type: "POST",
+        type: "GET",
         url: "http://23.106.158.25:8080/Project_BackSky_New/getImgList",
         // url: "http://localhost:8080/Project_BackSky_New/getImgList",
         success: function (data) {
@@ -77,11 +77,9 @@ function getData() {
                 return;
             }
             data = JSON.parse(data);
-            console.log(data);
+            // console.log(data);
             for (item in data) {
-
                 loadData(data[item]);
-                console.log(data[item]);
             }
         },
         error: function (e) {
@@ -92,13 +90,18 @@ function getData() {
 function loadData(data) {
     // $(".j_fullPath").text(data._fullPath);
     // $(".j_compressedPath").text(data._compressedPath);
+    $(".j_resultPanel").eq(0).clone()
+    .find(".j_review_img").attr('src',data._compressedPath)
+    .find(".j_compress").attr('attr-link',data._compressedPath)
+    .prependTo($('.j_all-img'));
 
-    var newResult = $(".j_resultPanel").eq(0).clone(true);
-    $(newResult).find(".j_fullPath").text(data._fullPath);
-    $(newResult).find(".j_compressedPath").text(data._compressedPath);
-    $(newResult).css("display", "inline-block");
+    // var newResult = $(".j_resultPanel").eq(0).clone();
+    // $(newResult).find(".j_review_img").attr('src',data._compressedPath);
+    // $(newResult).find(".j_compress").attr('attr-link',data._compressedPath);
+    // console.log(newResult);
+    // $(newResult).css("display", "inline-block");
 
-    $(".j_resultContainer").append(newResult);
+    // $(".j_all-img")[0].prepend($(newResult));
 }
 
 function saveData(data) {

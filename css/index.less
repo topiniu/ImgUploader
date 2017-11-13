@@ -48,7 +48,78 @@
         .beCenterX;
     }
 }
+.all-img{
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    display: flex;
+    /* flex-direction: row; */
+    flex-wrap: wrap;
+    .resultPanel{
+        display: inline-block;
+        height: 150px;
+        overflow: hidden;
+        // width: 80%;
+        margin: 10px 10px;
+        border-radius: 5px;
+        margin-top: 5px;
+        background-color: black;
+        
+        .panel-container{
+            display: inline-block;
+            position: relative;
+            .func-btn{
+                display: flex;
+                height: 150px;
+                position: absolute;
+                background: rgba(255,255,255,0.3);
+                top: 0;
+                z-index: 9;
+                width: 100%;
+                
+                .funcbtn{
+                    display: flex;
+                    float: left;
+                    height: 150px;
+                    width: 50%;
+                    /* text-align: center; */
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                    border-right: 1px rgba(0,0,0,0.3) solid;
+                    transition: all .3s;
 
+                    p{
+                        font-size: 24px;
+                        margin: 0;
+                        max-width: 80%;
+                        position: relative;
+                        word-wrap: break-word;
+                    }
+
+                    &.full{
+                        border-right: none;
+                        border-left: 1px rgba(0,0,0,0.3) solid;
+                    }
+
+                    &:hover{
+                        background-color: rgba(255,255,255,0.8);
+                    }
+                }
+            }
+        
+            .review_img{
+                height: 150px;
+                border-radius: 5px;
+                position: relative;
+                display: block;
+            }
+        }
+
+        
+
+    }
+}
 .resultContainer {
     .resultPanel {
         display: none;
@@ -144,14 +215,14 @@
     display: none;
     width: 240px;
     height: 80px;
-    position: absolute;
+    position: fixed;
     background-color: rgb(145, 152, 159);
     color: white;
     border-radius: 10px;
     left: 50%;
     bottom: 100px;
     transform: translate(-50%, 0);
-    ;
+    
     .msg-box-content {
         display: inline-block;
         margin: 0;

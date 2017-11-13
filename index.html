@@ -31,7 +31,8 @@
         </div>
         <div class="inputBox j_inputBox">
 
-            <p><span></span>Choose your image here!</p>
+            <p>
+                <span></span>Choose your image here!</p>
         </div>
         <form method="post" id="fileUploadForm" enctype="multipart/form-data" name="fileinfo">
             <input type="file" size="200" name="file" id="j_checkBox" class="checkBox">
@@ -39,7 +40,7 @@
         </form>
     </div>
 
-    <div class="resultContainer j_resultContainer">
+    <!-- <div class="resultContainer j_resultContainer">
         <div class="resultPanel j_resultPanel">
             <div>Full size path:
                 <p data-n="_fullPath" title="click to copy this" alt="copy this" class="pathText btn j_path j_fullPath"></p>
@@ -48,7 +49,25 @@
                 <p data-n="_commpressedPath" title="click to copy this" alt="copy this" class="pathText btn j_path j_compressedPath"></p>
             </div>
         </div>
+    </div> -->
+    <div class="all-img j_all-img">
+
+        <div class="resultPanel j_resultPanel">
+            <div class="panel-container">
+                <img class="review_img j_review_img" src="http://23.106.158.25:8080/Project_BackSky_New/data/uploadimg/compressed/IMG_1071.jpg">
+                <div class="func-btn">
+                    <span attr-link="compressed/href" class="funcbtn compressed j_funcBtn j_compress">
+                        <p>COMPRESSED</p>
+                    </span>
+                    <span attr-link="full/href" class="funcbtn full j_funcBtn j_full">
+                        <p>FULL</p>
+                    </span>
+                </div>
+            </div>
+        </div>
+
     </div>
+
 
     <div id="msgBox" class="msg-box">
         <p class="msg-box-content">

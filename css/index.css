@@ -48,6 +48,68 @@
   left: 50%;
   transform: translate(-50%, 0);
 }
+.all-img {
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  display: flex;
+  /* flex-direction: row; */
+  flex-wrap: wrap;
+}
+.all-img .resultPanel {
+  display: inline-block;
+  height: 150px;
+  overflow: hidden;
+  margin: 10px 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+  background-color: black;
+}
+.all-img .resultPanel .panel-container {
+  display: inline-block;
+  position: relative;
+}
+.all-img .resultPanel .panel-container .func-btn {
+  display: flex;
+  height: 150px;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.3);
+  top: 0;
+  z-index: 9;
+  width: 100%;
+}
+.all-img .resultPanel .panel-container .func-btn .funcbtn {
+  display: flex;
+  float: left;
+  height: 150px;
+  width: 50%;
+  /* text-align: center; */
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-right: 1px rgba(0, 0, 0, 0.3) solid;
+  transition: all .3s;
+}
+.all-img .resultPanel .panel-container .func-btn .funcbtn p {
+  font-size: 24px;
+  margin: 0;
+  max-width: 80%;
+  position: relative;
+  word-wrap: break-word;
+}
+.all-img .resultPanel .panel-container .func-btn .funcbtn.full {
+  border-right: none;
+  border-left: 1px rgba(0, 0, 0, 0.3) solid;
+}
+.all-img .resultPanel .panel-container .func-btn .funcbtn:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.all-img .resultPanel .panel-container .review_img {
+  height: 150px;
+  border-radius: 5px;
+  position: relative;
+  display: block;
+}
 .resultContainer .resultPanel {
   display: none;
   position: relative;
@@ -142,7 +204,7 @@
   display: none;
   width: 240px;
   height: 80px;
-  position: absolute;
+  position: fixed;
   background-color: #91989f;
   color: white;
   border-radius: 10px;

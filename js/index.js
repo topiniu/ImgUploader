@@ -67,11 +67,10 @@ $(function () {
     getData();
 });
 function getData() {
-
+    
     $.ajax({
         type: "GET",
         url: "http://23.106.158.25:8080/Project_BackSky_New/getImgList",
-        // url: "http://localhost:8080/Project_BackSky_New/getImgList",
         success: function (data) {
             if (data === "") {
                 return;
@@ -90,10 +89,12 @@ function getData() {
 function loadData(data) {
     // $(".j_fullPath").text(data._fullPath);
     // $(".j_compressedPath").text(data._compressedPath);
-    $(".j_resultPanel").eq(0).clone()
-    .find(".j_review_img").attr('src',data._compressedPath)
-    .find(".j_compress").attr('attr-link',data._compressedPath)
-    .prependTo($('.j_all-img'));
+    // console.log(data._compressedPath);
+    var n = $(".j_resultPanel").eq(0).clone(true);
+    n.find(".j_review_img").attr('src',data._compressedPath);
+    n.find(".j_compress").attr('attr-link',data._compressedPath);
+    n.css('display','block');
+    n.prependTo($('.j_all-img'));
 
     // var newResult = $(".j_resultPanel").eq(0).clone();
     // $(newResult).find(".j_review_img").attr('src',data._compressedPath);

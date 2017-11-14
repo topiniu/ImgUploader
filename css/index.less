@@ -53,26 +53,32 @@
     width: 100%;
     position: relative;
     display: flex;
+    justify-content: center;
     /* flex-direction: row; */
     flex-wrap: wrap;
     .resultPanel{
         display: inline-block;
         height: 150px;
+        width: 267px;
         overflow: hidden;
         // width: 80%;
         margin: 10px 10px;
         border-radius: 5px;
         margin-top: 5px;
         background-color: black;
+        border:1px solid #d2d1d1;
+        box-shadow: 8px 8px 5px #d2d1d1;
         
         .panel-container{
             display: inline-block;
             position: relative;
+            height: 150px;
             .func-btn{
                 display: flex;
                 height: 150px;
+                width: 267px;
                 position: absolute;
-                background: rgba(255,255,255,0.3);
+                // background: rgba(255,255,255,0.5);
                 top: 0;
                 z-index: 9;
                 width: 100%;
@@ -86,30 +92,38 @@
                     justify-content: center;
                     align-items: center;
                     cursor: pointer;
-                    border-right: 1px rgba(0,0,0,0.3) solid;
+                    // border-right: 1px rgba(0,0,0,0.3) solid;
                     transition: all .3s;
+                    font-size: 24px;
+                    width: 133px;
+                    background: rgba(255,255,255,0.5);
+                    
 
                     p{
-                        font-size: 24px;
                         margin: 0;
                         max-width: 80%;
                         position: relative;
                         word-wrap: break-word;
+                        font-weight: bold;
                     }
 
                     &.full{
                         border-right: none;
-                        border-left: 1px rgba(0,0,0,0.3) solid;
+                        // border-left: 1px rgba(0,0,0,0.3) solid;
+                        margin-left: 3px;                        
                     }
 
                     &:hover{
-                        background-color: rgba(255,255,255,0.8);
+                        // font-size: 28px;
+                        transform: scale(1.1);
+                        background-color: rgba(255,255,255,1);
                     }
                 }
             }
         
             .review_img{
-                height: 150px;
+                // height: 150px;
+                width: 267px;
                 border-radius: 5px;
                 position: relative;
                 display: block;
@@ -222,6 +236,7 @@
     left: 50%;
     bottom: 100px;
     transform: translate(-50%, 0);
+    z-index: 12;
     
     .msg-box-content {
         display: inline-block;

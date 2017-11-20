@@ -93,6 +93,8 @@ function loadData(data) {
     var n = $(".j_resultPanel").eq(0).clone(true);
     n.find(".j_review_img").attr('src',data._compressedPath);
     n.find(".j_compress").attr('attr-link',data._compressedPath);
+    n.find(".j_full").attr('attr-link',data._fullPath);
+    
     n.css('display','block');
     n.prependTo($('.j_all-img'));
 

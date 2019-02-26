@@ -21,7 +21,7 @@ $(function () {
         $.ajax({
             type: "POST",
             enctype: 'multipart/form-data',
-            url: "http://config.HOST:8080/Project_BackSky_New/uploadimg",
+            url: "http://" + config.HOST + ":8080/Project_BackSky_New/uploadimg",
             // url: "http://localhost:8080/Project_BackSky_New/uploadimg",
             data: data,
             processData: false,
@@ -70,7 +70,7 @@ function getData() {
     
     $.ajax({
         type: "GET",
-        url: "http://config.HOST:8080/Project_BackSky_New/getImgList",
+        url: "http://" + config.HOST + ":8080/Project_BackSky_New/getImgList",
         success: function (data) {
             if (data === "") {
                 return;

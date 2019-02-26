@@ -1,3 +1,3 @@
 var config = {
-  HOST: 'config.HOST'
+  HOST: '" + config.HOST + "'
 }
